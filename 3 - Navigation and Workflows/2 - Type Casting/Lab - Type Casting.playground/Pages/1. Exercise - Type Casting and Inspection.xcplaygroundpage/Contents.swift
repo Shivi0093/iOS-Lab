@@ -3,7 +3,7 @@
 
  Create a collection of type [Any], including a few doubles, integers, strings, and booleans within the collection. Print the contents of the collection.
  */
-var ok:[Any]=[10,"Shubham",32.00,true]
+var ok:[Any]=[10,"Shivdev",32.00,true]
 for i in ok
 {
     print(i)
@@ -26,7 +26,7 @@ for i in ok{
 }
 
 //:  Create a [String : Any] dictionary, where the values are a mixture of doubles, integers, strings, and booleans. Print the key/value pairs within the collection
-var dict:[String:Any]=["Shubham":23,"Ok":34.00,"Thanks":true,"Welcome":"Here"]
+var dict:[String:Any]=["Shivdev":23,"Ok":34.00,"Thanks":true,"Welcome":"Here"]
 for (ok,ok1) in dict{
     print("Key:",ok,"Value:",ok1)
 }
