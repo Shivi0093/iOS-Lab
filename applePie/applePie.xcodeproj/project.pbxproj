@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		3F9435FF2E2B6A9600FBF644 /* Apple Pie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F7CE77C2E2DF37E00F6C401 /* applePie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = applePie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3F9436112E2B6A9700FBF644 /* Exceptions for "Apple Pie" folder in "Apple Pie" target */ = {
+		3F7CE78E2E2DF37F00F6C401 /* Exceptions for "applePie" folder in "applePie" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 3F9435FE2E2B6A9600FBF644 /* Apple Pie */;
+			target = 3F7CE77B2E2DF37E00F6C401 /* applePie */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3F9436012E2B6A9600FBF644 /* Apple Pie */ = {
+		3F7CE77E2E2DF37E00F6C401 /* applePie */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3F9436112E2B6A9700FBF644 /* Exceptions for "Apple Pie" folder in "Apple Pie" target */,
+				3F7CE78E2E2DF37F00F6C401 /* Exceptions for "applePie" folder in "applePie" target */,
 			);
-			path = "Apple Pie";
+			path = applePie;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3F9435FC2E2B6A9600FBF644 /* Frameworks */ = {
+		3F7CE7792E2DF37E00F6C401 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F9435F62E2B6A9600FBF644 = {
+		3F7CE7732E2DF37E00F6C401 = {
 			isa = PBXGroup;
 			children = (
-				3F9436012E2B6A9600FBF644 /* Apple Pie */,
-				3F9436002E2B6A9600FBF644 /* Products */,
+				3F7CE77E2E2DF37E00F6C401 /* applePie */,
+				3F7CE77D2E2DF37E00F6C401 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3F9436002E2B6A9600FBF644 /* Products */ = {
+		3F7CE77D2E2DF37E00F6C401 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F9435FF2E2B6A9600FBF644 /* Apple Pie.app */,
+				3F7CE77C2E2DF37E00F6C401 /* applePie.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F9435FE2E2B6A9600FBF644 /* Apple Pie */ = {
+		3F7CE77B2E2DF37E00F6C401 /* applePie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F9436122E2B6A9700FBF644 /* Build configuration list for PBXNativeTarget "Apple Pie" */;
+			buildConfigurationList = 3F7CE78F2E2DF37F00F6C401 /* Build configuration list for PBXNativeTarget "applePie" */;
 			buildPhases = (
-				3F9435FB2E2B6A9600FBF644 /* Sources */,
-				3F9435FC2E2B6A9600FBF644 /* Frameworks */,
-				3F9435FD2E2B6A9600FBF644 /* Resources */,
+				3F7CE7782E2DF37E00F6C401 /* Sources */,
+				3F7CE7792E2DF37E00F6C401 /* Frameworks */,
+				3F7CE77A2E2DF37E00F6C401 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3F9436012E2B6A9600FBF644 /* Apple Pie */,
+				3F7CE77E2E2DF37E00F6C401 /* applePie */,
 			);
-			name = "Apple Pie";
+			name = applePie;
 			packageProductDependencies = (
 			);
-			productName = "Apple Pie";
-			productReference = 3F9435FF2E2B6A9600FBF644 /* Apple Pie.app */;
+			productName = applePie;
+			productReference = 3F7CE77C2E2DF37E00F6C401 /* applePie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3F9435F72E2B6A9600FBF644 /* Project object */ = {
+		3F7CE7742E2DF37E00F6C401 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					3F9435FE2E2B6A9600FBF644 = {
+					3F7CE77B2E2DF37E00F6C401 = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = 3F9435FA2E2B6A9600FBF644 /* Build configuration list for PBXProject "Apple Pie" */;
+			buildConfigurationList = 3F7CE7772E2DF37E00F6C401 /* Build configuration list for PBXProject "applePie" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 3F9435F62E2B6A9600FBF644;
+			mainGroup = 3F7CE7732E2DF37E00F6C401;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 3F9436002E2B6A9600FBF644 /* Products */;
+			productRefGroup = 3F7CE77D2E2DF37E00F6C401 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F9435FE2E2B6A9600FBF644 /* Apple Pie */,
+				3F7CE77B2E2DF37E00F6C401 /* applePie */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3F9435FD2E2B6A9600FBF644 /* Resources */ = {
+		3F7CE77A2E2DF37E00F6C401 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3F9435FB2E2B6A9600FBF644 /* Sources */ = {
+		3F7CE7782E2DF37E00F6C401 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3F9436132E2B6A9700FBF644 /* Debug */ = {
+		3F7CE7902E2DF37F00F6C401 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -146,7 +146,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Apple Pie/Info.plist";
+				INFOPLIST_FILE = applePie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -157,7 +157,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.Apple-Pie";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.applePie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -165,7 +165,7 @@
 			};
 			name = Debug;
 		};
-		3F9436142E2B6A9700FBF644 /* Release */ = {
+		3F7CE7912E2DF37F00F6C401 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -173,7 +173,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Apple Pie/Info.plist";
+				INFOPLIST_FILE = applePie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -184,7 +184,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.Apple-Pie";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.applePie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -192,7 +192,7 @@
 			};
 			name = Release;
 		};
-		3F9436152E2B6A9700FBF644 /* Debug */ = {
+		3F7CE7922E2DF37F00F6C401 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,7 +255,7 @@
 			};
 			name = Debug;
 		};
-		3F9436162E2B6A9700FBF644 /* Release */ = {
+		3F7CE7932E2DF37F00F6C401 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,25 +314,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F9435FA2E2B6A9600FBF644 /* Build configuration list for PBXProject "Apple Pie" */ = {
+		3F7CE7772E2DF37E00F6C401 /* Build configuration list for PBXProject "applePie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F9436152E2B6A9700FBF644 /* Debug */,
-				3F9436162E2B6A9700FBF644 /* Release */,
+				3F7CE7922E2DF37F00F6C401 /* Debug */,
+				3F7CE7932E2DF37F00F6C401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F9436122E2B6A9700FBF644 /* Build configuration list for PBXNativeTarget "Apple Pie" */ = {
+		3F7CE78F2E2DF37F00F6C401 /* Build configuration list for PBXNativeTarget "applePie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F9436132E2B6A9700FBF644 /* Debug */,
-				3F9436142E2B6A9700FBF644 /* Release */,
+				3F7CE7902E2DF37F00F6C401 /* Debug */,
+				3F7CE7912E2DF37F00F6C401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3F9435F72E2B6A9600FBF644 /* Project object */;
+	rootObject = 3F7CE7742E2DF37E00F6C401 /* Project object */;
 }

@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Apple Pie
+//  applePie
 //
-//  Created by Student on 19/07/25.
+//  Created by Student on 21/07/25.
 //
 
 import UIKit
