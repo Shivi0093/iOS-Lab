@@ -2,17 +2,16 @@
 //  SelectRoomTypeTableViewController.swift
 //  HotelCodable
 //
-//  Created by Student on 28/08/25.
+//  Created by Shubham Singh on 28/08/25.
 //
 
 import UIKit
-protocol SelectRoomTypeTableViewControllerDelegate: AnyObject{
-    func selectRoomTypeTableViewController(_ controller: SelectRoomTypeTableViewController, didSelect roomType: RoomType)
+protocol SelectRoomTypeTableViewControllerDelegate{
+    func selectRoomTypeTableViewController(_ controller:SelectRoomTypeTableViewController ,  didSelect roomType:RoomType)
 }
 class SelectRoomTypeTableViewController: UITableViewController {
-    var roomType: RoomType?
-    weak var delegate: SelectRoomTypeTableViewControllerDelegate?
-
+    var roomType:RoomType?
+    var delegate:SelectRoomTypeTableViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +21,6 @@ class SelectRoomTypeTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,34 +33,29 @@ class SelectRoomTypeTableViewController: UITableViewController {
         return RoomType.all.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTypeCell", for: indexPath)
-
-        // Configure the cell...
         let roomType = RoomType.all[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = roomType.name
-        content.secondaryText = "$\(roomType.price)"
-        cell.contentConfiguration = content
+        var content=cell.defaultContentConfiguration()
+        content.text=roomType.name
+        content.secondaryText="$ \(roomType.price)"
+        cell.contentConfiguration=content
+        
         if roomType == self.roomType{
             cell.accessoryType = .checkmark
         }
         else{
             cell.accessoryType = .none
         }
-        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let roomType=RoomType.all[indexPath.row]
-        self.roomType=roomType
+        self.roomType = roomType
         delegate?.selectRoomTypeTableViewController(self, didSelect: roomType)
         tableView.reloadData()
     }
-    
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

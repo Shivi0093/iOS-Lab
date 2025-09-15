@@ -2,13 +2,13 @@
 //  RegistrationTableViewController.swift
 //  HotelCodable
 //
-//  Created by Student on 28/08/25.
+//  Created by Shubham Singh on 28/08/25.
 //
 
 import UIKit
 
 class RegistrationTableViewController: UITableViewController {
-    var registrations: [Registration] = []
+    var registration:[Registeration]=[]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,31 +28,39 @@ class RegistrationTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return registrations.count
+        return registration.count
     }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RegistrationCell", for: indexPath)
-        let registration=registrations[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = registration.firstName + " " + registration.lastName
-        content.secondaryText = (registration.checkInDate..<registration.checkOutDate).formatted(date: .numeric, time: .omitted)+": "+registration.roomType.name
-        cell.contentConfiguration = content
-        
-        // Configure the cell...
-        
-
-        return cell
-    }
-    
-    @IBAction func unwindFromAddRegistation(unwindSegue: UIStoryboardSegue){
-        guard let addRgistrationViewController = unwindSegue.source as? AddRegistrationTableViewController,let registration = addRgistrationViewController.registration else{
-            return
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "section5"
+        {
+            if let dest = segue.destination as? UINavigationController {
+                if let fdes = dest.topViewController as? AddRegistrationTableViewController{
+                    if let indexPath = tableView.indexPathForSelectedRow {
+                        fdes.detail = registration[indexPath.row]
+                        print("Segue Performed")
+                    }
+                }
+            }
         }
-        registrations.append(registration)
+    }
+    @IBAction func unwind(_ segue:UIStoryboardSegue)
+    {
+        guard let addRegTabViewController = segue.source as? AddRegistrationTableViewController , let registeration = addRegTabViewController.registeration else{return}
+            registration.append(registeration)
         tableView.reloadData()
     }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RegistrationCell", for: indexPath)
+
+        // Configure the cell...
+        var content = cell.defaultContentConfiguration()
+        let r = registration[indexPath.row]
+        content.text =  r.firstName + " " + r.lastName
+        content.secondaryText = (r.checkInDate..<r.checkOutDate).formatted(date:.numeric, time: .omitted) + ":" + r.roomType.name
+        cell.contentConfiguration =  content
+        return cell
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
