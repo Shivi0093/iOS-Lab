@@ -70,8 +70,7 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
     }
 
     @IBAction func actionButtonTapped(_ sender: Any) {
-        
-    }
+            }
     
     
 }
