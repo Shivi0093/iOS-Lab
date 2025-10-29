@@ -8,31 +8,29 @@
 import UIKit
 
 class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
-    
-    var toDos = [ToDo] () // Array to store ToDo items
 
-    // Load saved ToDos or use sample ToDos if no saved data
+    var toDos = [ToDo]() // Array to store ToDo items
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        if let savedToDos = ToDo.loadToDos() {
-            toDos = savedToDos
-        } else {
-            toDos = ToDo.loadSampleToDos()
-        }
         
-        // Add an Edit button to the navigation bar
+        // Load saved ToDos or sample data
+        let loadedToDos = TodoDataModel.shared.getAllTodos()
+        if loadedToDos.isEmpty {
+            toDos = TodoDataModel.shared.loadSampleToDos()
+        } else {
+            toDos = loadedToDos
+        }
+
         navigationItem.leftBarButtonItem = editButtonItem
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
 
-    // Return the number of ToDo items for the table view to display
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDos.count
     }
 
-    // Dequeue a reusable cell and populate it with ToDo data
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath) as! ToDoCell
         
@@ -43,75 +41,65 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         
         return cell
     }
-  
-    // Allow rows to be editable
+
+    // MARK: - Edit / Delete Rows
+
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    // Handle row deletion
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            TodoDataModel.shared.deleteTodo(at: indexPath.row)
             toDos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            ToDo.saveToDos(toDos) // Save updated ToDos
         }
     }
 
-    // Handle unwind segue from ToDoDetailTableViewController
+    // MARK: - Unwind Segue
+
     @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind" else { return }
-        let sourceViewController = segue.source as!
-           ToDoDetailTableViewController
-    
+        let sourceViewController = segue.source as! ToDoDetailTableViewController
+        
         if let toDo = sourceViewController.toDo {
-            if let indexOfExistingToDo = toDos.firstIndex(of: toDo) {
-                // Update existing ToDo if it exists
-                toDos[indexOfExistingToDo] = toDo
-                tableView.reloadRows(at: [IndexPath(row: indexOfExistingToDo, section: 0)], with: .automatic)
+            if let index = toDos.firstIndex(of: toDo) {
+                // Update existing ToDo
+                toDos[index] = toDo
+                TodoDataModel.shared.updateTodo(toDo, at: index)
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
             } else {
-                // Add new ToDo if it doesn't exist
-                let newIndexPath = IndexPath(row: toDos.count, section: 0)
+                // Add new ToDo
                 toDos.append(toDo)
+                TodoDataModel.shared.addTodo(toDo)
+                let newIndexPath = IndexPath(row: toDos.count - 1, section: 0)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
         }
-        ToDo.saveToDos(toDos) // Save updated ToDos
     }
-    
-    // Handle the checkmark button tap to mark a ToDo as complete or incomplete
+
+    // MARK: - Handle Checkmark Tap
+
     func checkmarkTapped(sender: ToDoCell) {
         if let indexPath = tableView.indexPath(for: sender) {
             var toDo = toDos[indexPath.row]
             toDo.isComplete.toggle()
             toDos[indexPath.row] = toDo
+            TodoDataModel.shared.updateTodo(toDo, at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .automatic)
-            ToDo.saveToDos(toDos) // Save updated ToDos
         }
     }
-    
-    // Prepare for editing a ToDo by passing the data to ToDoDetailTableViewController
+
+    // MARK: - Edit Existing ToDo
+
     @IBSegueAction func editToDo(_ coder: NSCoder, sender: Any?) -> ToDoDetailTableViewController? {
         let detailController = ToDoDetailTableViewController(coder: coder)
         
-        guard let cell = sender as? UITableViewCell,
-              let indexPath = tableView.indexPath(for: cell) else {
-            return detailController }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        detailController?.toDo = toDos[indexPath.row]
-        
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            detailController?.toDo = toDos[indexPath.row]
+        }
         return detailController
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
